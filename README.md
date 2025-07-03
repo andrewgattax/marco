@@ -1,1 +1,2 @@
-bot discord con il signor edoardo che bestemmia come un pazzo
+# marco
+marco, un bot discord che ti insulta malamente con javascript
