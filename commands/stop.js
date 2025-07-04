@@ -9,7 +9,7 @@ const intervalState = require('../utilities/intervalState');
 
 module.exports = {
     name: "stop",
-    description: "edoardo se ne va",
+    description: "marco se ne va",
     async execute ({client, interaction}) {
         if(intervalState.getIntervalId() != null) {
             intervalState.clearIntervalId();

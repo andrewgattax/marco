@@ -27,7 +27,7 @@ for (const file of commandFiles) {
 client.on("ready", () => {
     const guild_ids = client.guilds.cache.map(guild => guild.id);
 
-    const rest = new REST({version: "10"}).setToken(process.env.TOKEN);
+    const rest = new REST({version: "10"}).setToken(process.env.BOT_TOKEN);
 /*     console.log(guild_ids); */
     for (const guildId of guild_ids) {
         console.log(guildId);
@@ -63,4 +63,4 @@ client.on("guildCreate", async () => {
 })
 //implementa aggiunta comandi su nuova guild
 
-client.login(process.env.TOKEN);
+client.login(process.env.BOT_TOKEN);

@@ -20,8 +20,8 @@ const input = {
     })
 };
 
-const apiId = parseInt(process.env.API_ID);
-const apiHash = process.env.API_HASH;
+const apiId = parseInt(process.env.TELEGRAM_API_ID);
+const apiHash = process.env.TELEGRAM_API_HASH;
 
 // Client state
 let client = null;

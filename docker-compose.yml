@@ -1,12 +1,15 @@
-version: "3.8"
-
+# made with love by andrewgattax
 services:
   app:
     build:
       context: .
       dockerfile: Dockerfile
-    image: edoardojs:latest  # Replace with your image name
-    container_name: edoardojs
+    container_name: marcojs
     network_mode: "bridge"
     restart: unless-stopped
     working_dir: /app
+    volumes:
+      - marcojs:/app/data
+
+volumes:
+  marcojs:
