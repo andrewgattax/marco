@@ -1,0 +1,25 @@
+name: push-to-cr.yaml
+on:
+  push:
+    branches:
+      - main
+      - master
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Chechout code
+        uses: actions/checkout@v4
+
+      - name: Login to Azure CR
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.ACR_LOGIN_SERVER }}
+          username: ${{ secrets.ACR_USERNAME }}
+          password: ${{ secrets.ACR_PASSWORD }}
+      - name: Build and push
+        run: |
+            docker build . -t ${{ secrets.ACR_LOGIN_SERVER }}/marco:${{ github.sha }} -t ${{ secrets.ACR_LOGIN_SERVER }}/marco:latest
+                            docker push ${{ secrets.ACR_LOGIN_SERVER }}/marco:${{ github.sha }}
+                            docker push ${{ secrets.ACR_LOGIN_SERVER }}/marco:latest
