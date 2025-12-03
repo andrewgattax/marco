@@ -21,7 +21,7 @@ async function generaInsulto(voiceChannel) {
 
     let usernameToInsult = await getUsername(targetUser);
 
-    const text = await spacoCall("Insulta " + usernameToInsult)
+    const text = await spacoCall("Minaccia " + usernameToInsult)
 
     const audioURL = googleTTS.getAudioUrl(text, {
         lang: "es",

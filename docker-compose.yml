@@ -1,13 +1,17 @@
 # made with love by andrewgattax
 services:
   marco:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: gtxcr.azurecr.io/marco:latest
     container_name: marco
     network_mode: "bridge"
     restart: unless-stopped
     working_dir: /app
     volumes:
       - ./data:/app/data
+    environment:
+      - CLIENT_ID=
+      - TOKEN=
+      - TELEGRAM_API_ID=
+      - TELEGRAM_API_HASH=
+      - PHONE_NUMBER=
 
