@@ -1,15 +1,13 @@
 # made with love by andrewgattax
 services:
-  app:
+  marco:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: marcojs
+    container_name: marco
     network_mode: "bridge"
     restart: unless-stopped
     working_dir: /app
     volumes:
-      - marcojs:/app/data
+      - ./data:/app/data
 
-volumes:
-  marcojs:
